@@ -1,0 +1,490 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="Zh-hant" xml:lang="zh-Hant-TW">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="url" content="http://covid-19.nchc.org.tw" />
+    <meta name="site_name" content="最新台灣疫情關鍵報告 | COVID-19 全球即時疫情地圖 | COVID-19 Global Dashboard by Taiwan | COVID-19疫情儀錶板 | 國家高速網路與計算中心" />
+    <meta name="description" content="最新台灣疫情關鍵報告 | COVID-19 新冠肺炎疫情全球大爆發，每天打開新聞各地確診人數不斷向上攀升，各項數字與新聞報導，到底哪個訊息最新聞快? ">
+    <meta property="og:title" content="最新台灣疫情關鍵報告 | COVID-19 全球即時疫情地圖 | COVID-19 Global Dashboard by Taiwan | COVID-19疫情儀錶板| 國家高速網路與計算中心">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://covid-19.nchc.org.tw/" />
+    <meta property="og:image" content="https://covid-19.nchc.org.tw/imgs/TWCC_poweredBy_S.png">
+    <meta property="og:site_name" content="COVID-19 全球疫情地圖" />
+    <meta property="og:description" content="國網中心近期利用約翰霍普金斯大學CSSE及臺灣衛福部之公開數據，以國內開放源始碼架構，建置「新冠肺炎全球即時確診地圖」，網站「每5分鐘即時更新」，還能掌握「各國確診趨勢圖」(含各國確診即時資訊以及每日發展趨勢圖)，讓民眾只需透過一個網站，最新疫情狀況一目瞭然!" />
+    <meta property="keywords" content="最新台灣疫情關鍵報告,全球疫情地圖,Dashboard,COVID-19,新冠肺炎,COVID-19疫情儀錶板,2019-nCoV,疫情地圖,Taiwan,NCHC,國家高速網路與計算中心">
+    <title>COVID-19 全球即時疫情地圖 | COVID-19 Global Dashboard by Taiwan | 最新台灣疫情關鍵報告</title>	
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700'>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <!-- Javascript -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SpecialAnnouncement",
+      "name": "COVID-19 全球即時疫情地圖 | COVID-19 Global Dashboard by Taiwan | 國家高速網路與計算中心",
+      "text": "國網中心近期利用約翰霍普金斯大學CSSE及臺灣衛福部之公開數據，以國內開放源始碼架構，建置「新冠肺炎全球即時確診地圖」，網站「每5分鐘即時更新」，還能掌握「各國確診趨勢圖」(含各國確診即時資訊以及每日發展趨勢圖)，讓民眾只需透過一個網站，最新疫情狀況一目瞭然!",
+      "datePosted": "2020-04-14T08:00",
+      "expires": "2020-12-24T23:59",
+      "newsUpdatesAndGuidelines": "https://covid-19.nchc.org.tw",
+      "diseasePreventionInfo": "https://covid-19.nchc.org.tw",
+      "category": "https://www.wikidata.org/wiki/Q81068910",
+      "spatialCoverage": [
+        {
+          "type": "AdministrativeArea",
+          "name": "Taiwan"
+        }
+      ]
+    }
+    </script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/placeholder.js"></script>	
+	<!-- Resources -->
+	<script src="js/core.js"></script>
+	<script src="js/charts.js"></script>
+	<script src="js/material.js"></script>
+	<script src="js/dataviz.js"></script>	
+	<script src="js/animated.js"></script>	
+	<script src="js/kelly.js"></script>	
+	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>	
+	<script src="https://cdn.amcharts.com/lib/5/themes/Material.js"></script>
+        <script src="https://cdn.amcharts.com/lib/5/themes/Kelly.js"></script>
+	
+<!-- Your Styles start -->
+<style>#chartdiv_0050 { width: 100%; height: 400px;} </style>
+<script type="text/javascript" language="javascript" src="amchartsSource/output/chartdiv_0050.min.js"></script>
+<style>#chartdiv_0056 { width: 100%; height: 400px;} </style>
+<script type="text/javascript" language="javascript" src="amchartsSource/output/chartdiv_0056.min.js"></script>
+
+
+
+<style>#chartdiv_001_7dayConfirmed { width: 100%; height: 400px;} </style>
+<script type="text/javascript" language="javascript" src="amchartsSource/output/chartdiv_001_7dayConfirmed.min.js"></script>
+
+<style>#chartdiv_009_fix { width: 100%; height: 400px;} </style>
+<script type="text/javascript" language="javascript" src="amchartsSource/output/chartdiv_009_fix.min.js"></script>	
+<style>#chartdiv_009_city { width: 100%; height: 400px;} </style>
+<script type="text/javascript" language="javascript" src="amchartsSource/output/chartdiv_009_city_OWID_WRL.min.js"></script>
+
+<style>
+.chart {
+ width: 100%;
+ height: 300px;
+ float: left;
+}
+</style>
+<script src='echarts-liquidfill/dist/echarts.min.js'></script>
+<script src='echarts-liquidfill/dist/echarts-liquidfill.js'></script>
+<!-- Your Styles end -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="index.php">
+                <img src="assets/img/logo.png" width="50" height="50" alt="COVID-19 Global Dashboard by Taiwan">
+				COVID-19<span style="font-size: 0.89em;">全球疫情地圖</span>
+			</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span style="font-size: 0.8em;"><a class="nav-link" href="index.php"><i class="fa fa-arrow-right fa-1x" aria-hidden="true"></i> 首頁</a></span>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: 0.8em;"><a class="nav-link" href="covid19map.php"><i class="fa fa-plane fa-1x" aria-hidden="true"></i> 地圖</a></span>
+                    </li>                    
+                    <li class="nav-item">
+                        <span style="font-size: 0.79em;"><a class="nav-link" href="dt_005-covidTable_7day_confirmed.php"><i class="fa fa-globe fa-1x" aria-hidden="true"></i> 全球報表</a></span>
+                    </li>						
+                     <li class="nav-item">
+                        <span style="font-size: 0.79em;"><a class="nav-link" href="dt_005-covidTable_taiwan.php"><i class="fa fa-flag fa-1x" aria-hidden="true"></i> 台灣報表</a></span>
+                    </li>		
+                    <li class="nav-item">
+                        <span style="font-size: 0.79em;"><a class="nav-link" href="city_confirmed.php"><i class="fa fa-university fa-1x" aria-hidden="true"></i> 縣市報表</a></span>
+                    </li>	
+                     <li class="nav-item">
+                        <span style="font-size: 0.79em;"><a class="nav-link" href="dt_002-csse_covid_19_daily_reports_vaccine_city2.php"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i> 疫苗接種</a></span>
+                    </li>	
+                     <li class="nav-item">
+                        <span style="font-size: 0.79em;"><a class="nav-link" href="dt_001-cv19_xray.php"><i class="fa fa-camera fa-1x" aria-hidden="true"></i> 胸腔X光</a></span>
+                    </li>						
+                    <li class="nav-item">
+                        <span style="font-size: 0.79em;"><a class="nav-link" href="aboutus.php"><i class="fa fa-envelope-open fa-1x" aria-hidden="true"></i> 回饋</a></span>
+                    </li>
+                </ul>
+                <form class="form-inline mt-1 mt-md-0">
+                    <ul class="navbar-nav mr-auto">
+						<li>
+						<select class="form-control" id="selectbox" name="" onchange="javascript:location.href = this.value;">
+						  <option value="#default">Language</option>
+						  						  <option value="?language=en">English</option>						</select>			
+						</li>
+                        <!--li>
+                            <a href="https://www.nchc.org.tw/Page?itemid=28&mid=43" target="_blank" role="button" class="btn btn-info my-2 my-sm-0">申請抗疫專案</a>
+                        </li-->
+                    </ul>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!--End Header-->
+	<!--div class="container">
+	  <div class="row text-center">
+		<div class="py-2"><span style="font-size: 1.0em; color: #c00000;">訊息: [COVID-19全球疫情地圖] 將於 [2021/12/31] 後停止數據更新, 但保留下載[2021/12/31]之前數據的功能, 感謝大家支持與關愛!</span></div>
+	</div>
+	</div-->
+		<!--div class="container">
+		<ul class="list-group">
+			<li class="list-group-item text-white bg-secondary">
+			1. 6/10 (6/11新聞稿)本土新增79,598人, 因包含6/11上午確診數<a href="https://tw.news.yahoo.com/%E4%BB%8A%E6%9C%AC%E5%9C%9F%E5%A2%9E7%E8%90%AC9598%E4%BE%8B%E7%A2%BA%E8%A8%BA-%E8%8E%8A%E4%BA%BA%E7%A5%A5%E6%9B%9D%E6%95%B8%E5%AD%97%E5%A4%A7%E5%A2%9E%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0-064018977.html" target="_blank"> <font color="#00f">(新聞來源)</font></a>, 故與本站 [縣市報表] <a href="city_confirmed.php"> <font color="#00f">(連結)</font> </a>引用CDC的資料<a href="case_confirmed_20220610.csv" download> <font color="#00f">(連結)</font> </a> 有所差異, 請見諒
+			<br>2. 6/11 (6/12新聞稿)本土新增50,643人, 因不包含6/11上午確診數<a href="https://tw.news.yahoo.com/%E4%BB%8A%E6%9C%AC%E5%9C%9F%E5%A2%9E7%E8%90%AC9598%E4%BE%8B%E7%A2%BA%E8%A8%BA-%E8%8E%8A%E4%BA%BA%E7%A5%A5%E6%9B%9D%E6%95%B8%E5%AD%97%E5%A4%A7%E5%A2%9E%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0-064018977.html" target="_blank"> <font color="#00f">(新聞來源)</font></a>, 故與本站 [縣市報表] <a href="city_confirmed.php"> <font color="#00f">(連結)</font> </a>引用CDC的資料<a href="case_confirmed_20220611.csv" download> <font color="#00f">(連結)</font> </a> 有所差異, 請見諒
+			</li>
+		</ul>	
+	</div-->	
+		
+    <!-- Top5 -->
+    <section class="coming-soon">
+        <div class="inner-bg">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>COVID-19 dashboard</h2>						
+                        <p class="btn-xl-font">
+                            <span style="font-size: 0.7em; color: #efd745; font-weight: 500;">
+                            							<a href="index.php?language=zh-tw&language=en">Change to English version</a>   
+														</span>						
+							<br>
+
+							<span style="font-size: 0.7em; color: #ffffff; font-weight: 500;">
+                                瀏覽人次: 29,877,697							</span>
+<br>							
+							<span style="font-size: 0.6em; color: #efd745; font-weight: 500;">
+                                Updated on Aug-19							</span>
+														
+						</p>
+                        <div class="timer">
+                            <a href="covid19map.php">
+                                <div class="global-wrapper">
+                                    <span class="global"></span><span style="font-size: 2.6em; color: yellow;"><i class="fa  fa-map-marker" aria-hidden="true"></i></span><br>台灣疫情地圖									<br><span style="font-size: 0.8em; color: white;">New</span>                                </div>
+                            </a> 
+                           <a href="dt_005-covidTable_7day_confirmed.php">
+                                <div class="no2-wrapper">
+                                    <span class="no2"></span>594,184,578<br>全球確診數<br>
+									<span style="font-size: 0.8em; color: yellow;"> <i class="fa fa-plus" aria-hidden="true"></i> 908,096 <i class="fa fa-arrow-up" aria-hidden="true"></i> 0.15%</span>
+								</div>
+                            </a>
+							<a href="dt_005-covidTable_taiwan.php">
+								<div class="taiwan-wrapper">
+									<span class="taiwan"></span>4,998,765<br>台灣確診數<br>
+									<span style="font-size: 0.78em; color: yellow;"><i class="fa fa-plus" aria-hidden="true"></i> 22,819 <i class="fa fa-arrow-up" aria-hidden="true"></i> 0.46%</span>								
+								</div>
+							</a>
+                            <a href="dt_002-csse_covid_19_daily_reports_vaccine_city2.php">
+                                <div class="no1-wrapper">
+									<span class="taiwan"></span>92.29%<br><span style="font-size: 0.95em;">台灣疫苗涵蓋率</span><br>
+									<span style="font-size: 0.7em; color: yellow;">第二劑 86.3%</span>								
+                                </div>
+                            </a>	
+                            <a href="city_confirmed.php">
+                                <div class="global-wrapper">
+                                    <span class="no1"></span><span style="font-size: 2.2em; color: white;"><i class="fa fa-university" aria-hidden="true"></i></span><br>縣市報表<br>
+									<span style="font-size: 0.8em; color: white;"><i class="fa fa-braille" aria-hidden="true"></i> 區域鄉鎮 <i class="fa fa-braille" aria-hidden="true"></i></span>
+                                </div>
+                            </a>
+						
+						</div>
+					</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Top5 -->	
+   <!-- Content -->	
+    <!--div class="container">
+        <div class="row">
+            <div class="col-lg-12 main">
+			<h3>數位新冠病毒健康證明申請</h3>
+			[ <a href="https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr" target="_blank"><span style="font-size: 1.2em; color: #17a2b8;">外部連結至衛福部</span></a> ]
+			<a href="https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr" target="_blank">		
+			<img src="images/covid19_certificate.jpg">
+			</a>
+			</div> 
+		</div> 
+    </div--> 
+    <div class="container">
+	  <!-- Three columns -->
+        <div class="row">
+            <div class="col-lg-12 main">
+                <h3>台灣疫情報告<a href="dt_005-covidTable_taiwan.php"><span style="font-size: 0.5em; color: red;"> More</span></a></h3>
+				[ <a href="https://www.cdc.gov.tw/" target="_blank"><span style="font-size: 1.2em; color: #17a2b8;">數據來源: 衛福部疾管署</span></a> ] 
+				<br><span style="font-size: 0.8em; color: #333333; font-weight: 500;">
+                Updated on Aug-19 UTC +8
+				</span>
+			</div>		
+			<!-- Daily2 block -->			
+            <div class="col-lg-3 col-sm-6 col-6 text-center my-5">
+				<span class="hidden-sm-down"></span>累計確診				<h1 class="country_confirmed mb-1 text-success">4,998,765</h1>
+				<p class="text-muted">
+					<span class="country_confirmed_percent"><small>本土病例 4,974,134</small></span>
+				</p>				
+			</div>
+			<div class="col-lg-3 col-sm-6 col-6 text-center my-5">
+				<span class="hidden-sm-down"></span>新增確診				<h1 class="country_recovered mb-1 text-info"><small>+</small>22,819</h1>
+				<p class="text-muted">
+					<span class="country_confirmed_percent"><small>本土病例 22559</small></span>
+				</p>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-6 text-center my-5">
+				<span class="hidden-sm-down"></span>累計死亡				<a href="deathstatistics.php?dt_name=1"><h1 class="country_deaths mb-1 text-dark">9,572</h1></a>
+				<p class="text-muted">
+					<span class="country_deaths_change">+32</span>
+					<br><span id="country_cfr"><small>(死亡率:  0.19%)</small></span>					
+				</p>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-6 text-center my-5">
+				<span class="hidden-sm-down"></span>台灣疫苗涵蓋率				<a href="dt_002-csse_covid_19_daily_reports_vaccine_city2.php"><h1 class="country_deaths mb-1 text-danger">92.29%</h1></a>
+				<p class="text-muted">
+				
+					<!--span class="country_deaths_percent"><small>(第一劑 92.29%, 第二劑 86.3%)</small></span-->
+					<span class="country_deaths_change"><small>累計接種人次 60,234,519</small></span>
+					<br><span class="country_deaths_change"><small>新增接種人次 +36,281</small></span>
+				</p>
+			</div>
+			<div class="col-lg-12 main">
+	          <h3>台灣本土病例分佈</h3>
+			  	<span style="font-size: 0.8em; color: #333333; font-weight: 500;">
+                Updated on Aug-19 UTC +8
+				</span><br>
+			  
+				<font color="#ff0000">*</font> 請點選下列按鈕, 查閱各縣市區域趨勢圖<br>
+              				   <a href="city_confirmed.php?mycity=新北市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">新北市<Br><span style="font-size: 1.0em;">+4739
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=台北市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">台北市<Br><span style="font-size: 1.0em;">+2757
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=桃園市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">桃園市<Br><span style="font-size: 1.0em;">+2632
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=苗栗縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">苗栗縣<Br><span style="font-size: 1.0em;">+601
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=基隆市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">基隆市<Br><span style="font-size: 1.0em;">+357
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=彰化縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">彰化縣<Br><span style="font-size: 1.0em;">+938
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=台中市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">台中市<Br><span style="font-size: 1.0em;">+2710
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=宜蘭縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">宜蘭縣<Br><span style="font-size: 1.0em;">+567
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=新竹縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">新竹縣<Br><span style="font-size: 1.0em;">+700
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=花蓮縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">花蓮縣<Br><span style="font-size: 1.0em;">+390
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=高雄市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">高雄市<Br><span style="font-size: 1.0em;">+1762
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=台南市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">台南市<Br><span style="font-size: 1.0em;">+1392
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=新竹市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">新竹市<Br><span style="font-size: 1.0em;">+610
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=屏東縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">屏東縣<Br><span style="font-size: 1.0em;">+565
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=南投縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">南投縣<Br><span style="font-size: 1.0em;">+317
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=台東縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">台東縣<Br><span style="font-size: 1.0em;">+217
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=雲林縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">雲林縣<Br><span style="font-size: 1.0em;">+517
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=嘉義縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">嘉義縣<Br><span style="font-size: 1.0em;">+315
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=嘉義市" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">嘉義市<Br><span style="font-size: 1.0em;">+193
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=澎湖縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">澎湖縣<Br><span style="font-size: 1.0em;">+128
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=連江縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">連江縣<Br><span style="font-size: 1.0em;">+12
+&nbsp;</span></a>				 
+                  				   <a href="city_confirmed.php?mycity=金門縣" class="btn btn-success btn-lg" role="button" aria-pressed="true"><span style="font-size: 1em;">金門縣<Br><span style="font-size: 1.0em;">+140&nbsp;</span></a>				 
+                  	
+            </div>			
+        </div>
+		
+		
+    </div>
+    <!-- end content -->	
+   <!-- Content -->	
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main">		
+			<h3>各縣市區域每日新增確診圖表</h3>
+			<small><a href="city_confirmed.php"><font color="#ff0000"> [ More detail ]</font></a></small>	
+			<div id="chartdiv_0056"></div>	
+			<br>
+			</div>
+        </div>
+    </div>
+    <!-- end content -->	
+    <div class="container">
+		<div class="row">
+            <div class="col-lg-12 main">
+			<h3> 各縣市COVID-19累計接種率與確診率統計			<br><a href="cityCaseConfirmed.php"><span style="font-size: 0.6em; color: #17a2b8;">[觀看更多縣市資料]</span></a>			</h3>
+			</div>			
+            ﻿<style>
+.chart {
+ width: 100%;
+ height: 300px;
+ float: left;
+}
+</style>
+<script src='echarts-liquidfill/dist/echarts.min.js'></script>
+<script src='echarts-liquidfill/dist/echarts-liquidfill.js'></script>
+ <div class="col-lg-3 col-sm-6 col-6 text-left">
+<a href="cityCaseConfirmed.php"><span class="chart"></span></a>
+</div>
+<div class="col-lg-3 col-sm-6 col-6 text-left">
+<a href="cityCaseConfirmed.php"><span class="chart"></span></a>
+</div>
+<div class="col-lg-3 col-sm-6 col-6 text-left">
+<a href="cityCaseConfirmed.php"><span class="chart"></span></a>
+</div>
+<div class="col-lg-3 col-sm-6 col-6 text-left">
+<a href="cityCaseConfirmed.php"><span class="chart"></span></a>
+</div>
+ <script>
+            var bgColor = '#E3F7FF';
+            var containers = document.getElementsByClassName('chart');
+            var options = [
+			{ series: [{type: 'liquidFill',data: [0.717	],radius: '70%',outline: {show: true},label: {formatter: '新北市\n第3劑接種率\n\n71.7%'}}]},
+{ series: [{type: 'liquidFill',data: [{value:0.266,itemStyle: {color: '#ff7777',opacity: 0.7}}],radius: '70%',outline: {itemStyle: {borderColor: '#ff7777'}},label: {formatter: '新北市\n累計確診率\n\n26.6%',color: '#333333'},backgroundStyle: {color: '#ff7777',opacity: 0.4}}]},
+{ series: [{type: 'liquidFill',data: [0.723	],radius: '70%',outline: {show: true},label: {formatter: '臺中市\n第3劑接種率\n\n72.3%'}}]},
+{ series: [{type: 'liquidFill',data: [{value:0.207,itemStyle: {color: '#ff7777',opacity: 0.7}}],radius: '70%',outline: {itemStyle: {borderColor: '#ff7777'}},label: {formatter: '臺中市\n累計確診率\n\n20.7%',color: '#333333'},backgroundStyle: {color: '#ff7777',opacity: 0.4}}]}			];
+
+            var charts = [];
+            for (var i = 0; i < options.length; ++i) {
+                var chart = echarts.init(containers[i]);
+
+                if (i > 0) {
+                    options[i].series[0].silent = true;
+                }
+                chart.setOption(options[i]);
+                chart.setOption({
+                    baseOption: options[i],
+                    media: [{
+                        query: {
+                            maxWidth: 300
+                        },
+                        option: {
+                            series: [{
+                                label: {
+                                    fontSize: 16                                }
+                            }]
+                        }
+                    }]
+                });
+
+                charts.push(chart);
+            }
+
+            window.onresize = function () {
+                for (var i = 0; i < charts.length; ++i) {
+                    charts[i].resize();
+                }
+            };
+
+
+        </script>
+        </div>
+	</div>	
+   <!-- Content -->	
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main">		
+			<h3>台灣 COVID-19 送驗件數統計</h3>
+			<small><a href="dt_005-covidTable_postive_rate.php"><font color="#ff0000">採檢確診率=(7日平均確診數/7日平均送驗件數) [ More detail ]</font></a></small>	
+			<div id="chartdiv_0050"></div>	
+			<br>
+			</div>
+        </div>
+    </div>
+    <!-- end content -->
+   <!-- Content -->	
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main">		
+			<h3>COVID-19 七日平均確診數</h3>
+			<small><a href="https://covid-19.nchc.org.tw/dt_005-covidTable_7day_confirmed.php"><font color="#ff0000">[ More detail ]</font></a></small>	
+			<div id="chartdiv_001_7dayConfirmed"></div>	
+			<br>
+			</div>
+        </div>
+    </div>
+    <!-- end content -->	
+	
+   <!-- Content -->	
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main">		
+			<h3>台灣COVID-19 疫情每日統計圖</h3>
+			<small> 今日新增確診數 = (CDC發佈之新增確診數)
+			<a href="refineCards.php"><font color="#ff0000">請點此連結, 查閱校正回歸相關資料</font></a></small>	
+			<div id="chartdiv_009_fix"></div>	
+			<br>
+			</div>
+        </div>
+    </div>
+    <!-- end content -->				
+   <!-- Content -->	
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 main">
+                <h3>全球疫情每日新增數</h3>			
+				<div id="chartdiv_009_city"></div>
+			</div>
+        </div>
+    </div>
+    <!-- end content -->		
+    <!--footer-->
+    <section class="container">
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+			<div class="footer-copyright text-center py-3">[ 雲端計算: <a href="https://www.twcc.ai" target="_blank"><span style="font-size: 0.9em; color: #17a2b8;">WWW.TWCC.AI 臺灣AI雲</span></a> ]
+			 <br>
+			[ 數據來源: <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank"><span style="font-size: 0.9em; color: #17a2b8;">Johns Hopkins CSSE</span></a> |
+			 <a href="https://www.cdc.gov.tw/" target="_blank"><span style="font-size: 0.9em; color: #17a2b8;">衛福部疾管署</span></a> ]			 
+			 <br>
+			[ 開放資源: <a href="links.php"><span style="font-size: 0.9em; color: #17a2b8;">NIH</span></a> |
+			 <a href="links.php"><span style="font-size: 0.9em; color: #17a2b8;">美國國家衛生研究院</span></a> ]			 
+
+			</div>
+			
+            <div class="footer-copyright text-center py-3">© 2020 Regents of the National Center for High-performance Computing. All rights reserved.<br><a href="terms.php"><span style="font-size: 1.0em; color: black;">Terms of Use</span></a> | <a href="https://www.nchc.org.tw/Page?itemid=89&mid=153" target="_blank"><span style="font-size: 1.0em; color: black;">Privacy Statement</span></a> </div>
+			
+			 <div class="footer-copyright text-center py-3"><span><img src="imgs/nchc_logo_02.png"><img src="imgs/nchc_logo_01.png"></span></div>
+			
+        </footer>
+    </section>
+	<script src="mailtoui-min.js" async=false></script>
+
+    <!--End footer -->
+</body>
+
+</html>
